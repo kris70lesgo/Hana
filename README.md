@@ -18,7 +18,7 @@ Hana is an informational monitor. It cannot borrow, repay, approve tokens, liqui
 Requirements: Node.js 20.18.3 or later and npm.
 
 ```sh
-npm install
+npm install --legacy-peer-deps
 cp packages/nextjs/.env.example packages/nextjs/.env.local
 npm run next:dev
 ```
@@ -74,6 +74,10 @@ HCS messages are compact versioned JSON and stay below Hedera’s 1,024-byte mes
 
 The `borrower-checkpoint` schema prefix is retained for receipt compatibility; the product is named **Hana**. History identifies unknown schemas and observations without a matching policy instead of treating them as verified. Replay recomputes supported observations against their matching policy. It cannot verify that the publisher’s source readings were truthful.
 
+### Testnet evidence
+
+Hana has published a policy receipt to Hedera testnet: [topic `0.0.10856051`, message sequence `1` on the Hedera mirror node](https://testnet.mirrornode.hedera.com/api/v1/topics/0.0.10856051/messages?sequenceNumber=eq:1). This is evidence of an HCS testnet transaction; it does not independently verify the source values in the receipt.
+
 ## Development
 
 ```sh
@@ -94,7 +98,7 @@ Workspace layout:
 Hana includes the Scaffold-HBAR `template.json`, README, license, and agent notes. To use it with Scaffold-HBAR, select Next.js, Hardhat, and npm. After publishing the repository, run:
 
 ```sh
-npx create-scaffold-hbar@latest --template kris70lesgo/Hana
+npm create scaffold-hbar@latest -- --template kris70lesgo/Hana
 ```
 
 See the [Scaffold-HBAR documentation](https://docs.hedera.com/solutions/tools/scaffold-hbar/index) for template setup.
