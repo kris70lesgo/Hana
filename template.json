@@ -1,0 +1,33 @@
+{
+  "name": "hana",
+  "description": "Hana is a read-only Bonzo Lend monitor with replayable Hedera Consensus Service receipts.",
+  "create-scaffold-hbar": {
+    "capabilities": {
+      "frontend": ["nextjs-app"],
+      "solidityFramework": ["hardhat"],
+      "packageManager": ["npm"]
+    },
+    "defaults": {
+      "frontend": "nextjs-app",
+      "solidityFramework": "hardhat",
+      "packageManager": "npm"
+    },
+    "outro": {
+      "sections": [
+        {
+          "title": "Next steps",
+          "steps": [
+            {
+              "label": "Configure a Hedera testnet topic and operator",
+              "text": "Copy packages/nextjs/.env.example to packages/nextjs/.env.local and set the HCS operator and topic."
+            },
+            { "label": "Start the frontend", "command": "{run:next:dev}" },
+            {
+              "text": "Read README.md for Bonzo data configuration, HCS receipt replay, and security notes."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

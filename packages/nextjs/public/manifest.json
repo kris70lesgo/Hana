@@ -1,0 +1,6 @@
+{
+  "name": "Hana",
+  "short_name": "Hana",
+  "description": "Read-only Bonzo monitoring with replayable Hedera receipts.",
+  "iconPath": "/favicon.png"
+}

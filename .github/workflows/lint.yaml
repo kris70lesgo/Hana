@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.18.3
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check frontend types
+        run: npm run next:check-types
+
+      - name: Test policy and export logic
+        run: npm run next:test
+
+      - name: Lint frontend
+        run: npm run next:lint
+
+      - name: Build frontend
+        run: npm run next:build
+
+      - name: Compile Hedera contracts
+        run: npm run hardhat:compile
+
+      - name: Lint Hardhat package
+        run: npm run hardhat:lint -- --max-warnings=0

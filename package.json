@@ -1,0 +1,47 @@
+{
+  "name": "hana",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/hardhat",
+      "packages/nextjs"
+    ]
+  },
+  "scripts": {
+    "format": "npm run next:format -- && npm run hardhat:format --",
+    "hardhat:account": "npm run account -w @checkpoint/hardhat --",
+    "hardhat:account:generate": "npm run account:generate -w @checkpoint/hardhat --",
+    "hardhat:account:import": "npm run account:import -w @checkpoint/hardhat --",
+    "hardhat:account:reveal-pk": "npm run account:reveal-pk -w @checkpoint/hardhat --",
+    "hardhat:chain": "npm run chain -w @checkpoint/hardhat --",
+    "hardhat:check-types": "npm run check-types -w @checkpoint/hardhat --",
+    "hardhat:clean": "npm run clean -w @checkpoint/hardhat --",
+    "hardhat:compile": "npm run compile -w @checkpoint/hardhat --",
+    "hardhat:deploy": "npm run deploy -w @checkpoint/hardhat --",
+    "hardhat:flatten": "npm run flatten -w @checkpoint/hardhat --",
+    "hardhat:fork": "npm run fork -w @checkpoint/hardhat --",
+    "hardhat:format": "npm run format -w @checkpoint/hardhat --",
+    "hardhat:lint": "npm run lint -w @checkpoint/hardhat --",
+    "hardhat:lint-staged": "npm run lint-staged -w @checkpoint/hardhat --",
+    "hardhat:test": "npm run test -w @checkpoint/hardhat --",
+    "hardhat:verify": "npm run verify:contract -w @checkpoint/hardhat --",
+    "lint": "npm run next:lint -- && npm run hardhat:lint --",
+    "next:build": "npm run build -w @checkpoint/nextjs --",
+    "next:check-types": "npm run check-types -w @checkpoint/nextjs --",
+    "next:dev": "npm run dev -w @checkpoint/nextjs --",
+    "next:format": "npm run format -w @checkpoint/nextjs --",
+    "next:lint": "npm run lint -w @checkpoint/nextjs --",
+    "next:serve": "npm run serve -w @checkpoint/nextjs --",
+    "next:start": "npm run start -w @checkpoint/nextjs --",
+    "next:test": "npm run test -w @checkpoint/nextjs --"
+  },
+  "packageManager": "npm@10.0.0",
+  "devDependencies": {
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10"
+  },
+  "engines": {
+    "node": ">=20.18.3"
+  }
+}

@@ -1,0 +1,37 @@
+# dependencies
+node_modules
+
+# npm
+.npm/*
+!.npm/patches
+!.npm/plugins
+!.npm/releases
+!.npm/sdks
+!.npm/versions
+
+# eslint
+.eslintcache
+
+# misc
+.DS_Store
+
+# IDE
+.vscode
+.idea
+
+# cli
+dist
+
+.env
+.env.*
+!.env.example
+!**/.env.example
+**/.env.local
+**/.env.*.local
+.next
+**/.next
+coverage
+*.tsbuildinfo
+.arena/
+.agents/
+.claude/
