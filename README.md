@@ -45,6 +45,10 @@ Never commit `.env.local` or expose `HEDERA_PRIVATE_KEY` or `HEDERA_PUBLISH_TOKE
 
 The default Bonzo URL is a staging endpoint and may change. Set `BONZO_API_URL` and `HEDERA_RPC_URL` to current, compatible endpoints when needed. Hana does not replace protocol risk controls or guarantee that a position is safe.
 
+## Deploying to Vercel
+
+Link the repository to a Vercel project with `packages/nextjs` as its root directory and Node.js 22.x. The install command is `npm install --legacy-peer-deps`; Vercel builds the Next.js workspace with its `build` script. Configure `HEDERA_ACCOUNT_ID`, `HEDERA_TOPIC_ID`, `HEDERA_PRIVATE_KEY`, and `HEDERA_PUBLISH_TOKEN` as server-side project environment variables. Mark the private key and publish token as sensitive, and never use a `NEXT_PUBLIC_` prefix for them. Keep deployment access protected while HCS writes are enabled; public hosting also needs rate limits and abuse controls on the write route.
+
 ## How a check flows
 
 ```mermaid
